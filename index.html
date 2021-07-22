@@ -1,0 +1,16 @@
+<div id="dosbox" style="width: 640px; height: 400px;"></div>
+<br/>
+<button onclick="dosbox.requestFullScreen();">Make fullscreen</button>
+
+<script type="text/javascript" src="js-dos-api.js"></script>
+<script type="text/javascript">
+var dosbox = new Dosbox({
+     id: "dosbox",
+     onload: function (dosbox) {
+     dosbox.run("dos/zip/MarioTT.zip", "./MARIO.EXE");
+     },
+     onrun: function (dosbox, app) {
+     console.log("App '" + app + "' is runned");
+     }
+     });
+</script>
